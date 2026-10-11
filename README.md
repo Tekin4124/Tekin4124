@@ -15,6 +15,31 @@
 
 ---
 
+### 🚀 Öne Çıkan Proje / Featured Project
+
+<table>
+  <tr>
+    <td>
+      <h3>🚛 <a href="https://github.com/Tekin4124/yukio-android-demo">Yükio — Android Lojistik & Yük Eşleştirme (Demo)</a></h3>
+      <p>Modern lojistik yük ilanlarını filtreleyen, analiz eden ve araç-güzergâh uygunluğuna göre sıralayan Android & Compose mimarisi.</p>
+      <p>
+        <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" />
+        <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white" />
+        <img src="https://img.shields.io/badge/Material%203-795548?style=flat-square" />
+        <img src="https://img.shields.io/badge/Room%20DB-3DDC84?style=flat-square&logo=sqlite&logoColor=white" />
+        <img src="https://img.shields.io/badge/Clean%20Architecture-grey?style=flat-square" />
+      </p>
+      <ul>
+        <li><strong>Arayüz & Deneyim:</strong> Jetpack Compose, Material 3, modern ilan kartları ve dinamik tema desteği.</li>
+        <li><strong>Yerel Veritabanı & Sıralama:</strong> Room, Coroutines/Flow ile reaktif filtreleme motoru.</li>
+        <li><strong>Gizlilik Odaklı Tasarım:</strong> Kişisel veri (PII) maskeleme ve güvenli yerel demo mimarisi.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
 ### 👨‍💻 Hakkımda / About Me
 
 Teknolojiye çok boyutlu yaklaşan; **Mobil Uygulama**, **Yapay Zeka** ve **Siber Güvenlik** kesişiminde güvenli, ölçeklenebilir ve akıllı sistemler geliştiren bir yazılımcıyım.
