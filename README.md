@@ -1,6 +1,6 @@
 <div align="center">
 
-# Selam, ben Muhammet 👋
+# Selam, ben Muhammet
 
 Android ve web uygulamaları geliştiriyorum. Aşağıdaki projeleri açıp deneyebilir, kaynaklarını inceleyebilirsin.
 
@@ -9,7 +9,7 @@ Android ve web uygulamaları geliştiriyorum. Aşağıdaki projeleri açıp dene
 
 </div>
 
-## 🚀 Geliştirdiğim projeler
+## Projeler
 
 <table>
 <tr>
@@ -22,9 +22,8 @@ Talep oluştur, şoför ata ve teslimatı takip et. Satın alma, sevkiyat, şof�
 
 [![Web uygulaması](https://img.shields.io/badge/Canlı_yayın-Webde_aç-0D9488?style=flat-square&logo=googlechrome&logoColor=white)](https://tekinflow.muhammet-tekin.dev)
 ![Kotlin](https://img.shields.io/badge/Kotlin-Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![React](https://img.shields.io/badge/React-Web-149ECA?style=flat-square&logo=react&logoColor=white)
 
-[💻 Kaynak kodu](https://github.com/Tekin4124/tekinflow) · [📱 Android APK](https://github.com/Tekin4124/tekinflow/releases/latest/download/TekinFlow.apk)
+[Kaynak kodu](https://github.com/Tekin4124/tekinflow) · [Android APK](https://github.com/Tekin4124/tekinflow/releases/latest/download/TekinFlow.apk)
 
 </td>
 <td width="50%" valign="top">
@@ -36,9 +35,8 @@ Odanın müsaitliğini, günün toplantılarını ve sıradaki rezervasyonu gös
 
 [![Takvim](https://img.shields.io/badge/Canlı_yayın-Takvimi_aç-0284C7?style=flat-square&logo=googlechrome&logoColor=white)](https://roomflow.muhammet-tekin.dev)
 ![Android](https://img.shields.io/badge/Android-Kiosk-3DDC84?style=flat-square&logo=android&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Backend-43853D?style=flat-square&logo=nodedotjs&logoColor=white)
 
-[💻 Kaynak kodu](https://github.com/Tekin4124/roomflow) · [⚙️ Yönetim](https://roomflow.muhammet-tekin.dev/admin) · [📱 APK](https://github.com/Tekin4124/roomflow/releases/latest/download/RoomFlow.apk)
+[Kaynak kodu](https://github.com/Tekin4124/roomflow) · [Yönetim](https://roomflow.muhammet-tekin.dev/admin) · [APK](https://github.com/Tekin4124/roomflow/releases/latest/download/RoomFlow.apk)
 
 </td>
 </tr>
@@ -52,9 +50,8 @@ Odanın müsaitliğini, günün toplantılarını ve sıradaki rezervasyonu gös
 
 [![Defter](https://img.shields.io/badge/Canlı_yayın-Defteri_aç-D97706?style=flat-square&logo=googlechrome&logoColor=white)](https://defter.muhammet-tekin.dev)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Web-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![SQLite](https://img.shields.io/badge/SQLite-Notlar-003B57?style=flat-square&logo=sqlite&logoColor=white)
 
-[💻 Kaynak kodu](https://github.com/Tekin4124/sihirli-not-defteri)
+[Kaynak kodu](https://github.com/Tekin4124/sihirli-not-defteri)
 
 </td>
 <td width="50%" valign="top">
@@ -65,9 +62,8 @@ Odanın müsaitliğini, günün toplantılarını ve sıradaki rezervasyonu gös
 Yük ilanlarını araç ve güzergâh tercihlerine göre listele ve filtrele. Public sürüm, özel parser veya üretim sunucusu gerektirmeden örnek ilanlarla çalışır.
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-Android-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![Room](https://img.shields.io/badge/Room-Yerel_veri-2563EB?style=flat-square&logo=android&logoColor=white)
 
-[💻 Kaynak kodu](https://github.com/Tekin4124/yukio-android-demo) · [📱 Kurulum & APK](https://github.com/Tekin4124/yukio-android-demo#readme)
+[Kaynak kodu](https://github.com/Tekin4124/yukio-android-demo) · [Kurulum & APK](https://github.com/Tekin4124/yukio-android-demo#readme)
 
 </td>
 </tr>
@@ -80,24 +76,18 @@ Yük ilanlarını araç ve güzergâh tercihlerine göre listele ve filtrele. Pu
 SUPIR, Real-ESRGAN ve CodeFormer modellerini tek Gradio arayüzünde birleştirir. Qwen, yazılan isteği restorasyon promptuna dönüştürür. Çalıştırmak için NVIDIA GPU gerekir; üretilen ayrıntılar model tahmini olabilir.
 
 ![Python](https://img.shields.io/badge/Python-Görüntü_işleme-3776AB?style=flat-square&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-GPU-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![Gradio](https://img.shields.io/badge/Gradio-Arayüz-F97316?style=flat-square)
 
-[💻 Kaynak kodu & kurulum](https://github.com/Tekin4124/AI-UltraHD-Restoration)
+[Kaynak kodu & kurulum](https://github.com/Tekin4124/AI-UltraHD-Restoration)
 
 </td>
 </tr>
 </table>
 
-> 🧪 TekinFlow ve RoomFlow'un canlı yayınlarında örnek veriler kullanılır. RoomFlow değişiklikleri ziyaretçi oturumuna özeldir; gerçek şirket takvimine bağlanmaz.
+> TekinFlow ve RoomFlow'un canlı yayınlarında örnek veriler kullanılır. RoomFlow değişiklikleri ziyaretçi oturumuna özeldir; gerçek şirket takvimine bağlanmaz.
 
-## 🛠️ Kullandığım araçlar
+## Kullandığım araçlar
 
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![React](https://img.shields.io/badge/React-149ECA?style=flat-square&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=nodedotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+Kotlin · Jetpack Compose · React · Node.js · Python · SQLite · PostgreSQL · Docker · Linux
 
-📍 Kocaeli, Türkiye · Kurulum adımları ve test komutları her projenin README'sinde.
+Kocaeli, Türkiye · Kurulum adımları ve test komutları her projenin README'sinde.
