@@ -5,7 +5,7 @@
 **Android Geliştirme · Web & Backend · Yapay Zeka**  
 📍 Kocaeli / Darıca, Türkiye
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/)
+[🌐 Kişisel site](https://tekin4124.github.io/) · [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/)
 [![E-posta](https://img.shields.io/badge/E--posta-ProtonMail-6D4AFF?style=flat-square&logo=protonmail&logoColor=white)](mailto:tekin.muhammet@proton.me)
 
 </div>
@@ -28,7 +28,7 @@
 
 - 🚛 **[Yükio](https://github.com/Tekin4124/yukio-android-demo)** — Lojistik yük ilanlarını güzergâh ve araç uygunluğuna göre filtreleyen reaktif Android mimarisi.  
   `Kotlin` `Jetpack Compose` `Room DB` `Flow`  
-  🔗 [Kurulum & APK](https://github.com/Tekin4124/yukio-android-demo#readme) · [Kaynak Kodu](https://github.com/Tekin4124/yukio-android-demo)
+  🔗 [Android APK İndir](https://github.com/Tekin4124/yukio-android-demo/releases/latest/download/Yukio.apk) · [Kaynak Kodu](https://github.com/Tekin4124/yukio-android-demo)
 
 - ✨ **[AI Ultra HD Restoration](https://github.com/Tekin4124/AI-UltraHD-Restoration)** — SUPIR, Real-ESRGAN ve CodeFormer modelleriyle 4K/8K fotoğraf restorasyonu ve Gradio arayüzü.  
   `Python` `PyTorch` `Gradio` `Docker`  
