@@ -1,26 +1,103 @@
-# Muhammet Tekin
+<div align="center">
 
-Android ve web uygulamaları geliştiriyorum. Kotlin, Jetpack Compose, React ve Node.js ile günlük işlere yönelik araçlar üretiyorum.
+# Selam, ben Muhammet 👋
 
-[LinkedIn](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/) · [E-posta](mailto:tekin.muhammet@proton.me)
+Android ve web uygulamaları geliştiriyorum. Aşağıdaki projeleri açıp deneyebilir, kaynaklarını inceleyebilirsin.
 
-## Projeler
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-İletişim-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/)
+[![E-posta](https://img.shields.io/badge/E--posta-ProtonMail-6D4AFF?style=flat-square&logo=protonmail&logoColor=white)](mailto:tekin.muhammet@proton.me)
 
-| Proje | Ne yapıyor? | Denemek için |
-| --- | --- | --- |
-| [TekinFlow](https://github.com/Tekin4124/tekinflow) | Satın alma taleplerini, şoför atamalarını ve teslimatları aynı akışta takip eder. Android ve web arayüzleri bulunur. | [Web uygulaması](https://tekinflow.muhammet-tekin.dev) · [Android APK](https://github.com/Tekin4124/tekinflow/releases/latest/download/TekinFlow.apk) |
-| [RoomFlow](https://github.com/Tekin4124/roomflow) | Toplantı odalarının günlük takvimini tablet ve web ekranlarında gösterir. Microsoft Graph entegrasyonu destekler. | [Takvim](https://roomflow.muhammet-tekin.dev) · [Yönetim](https://roomflow.muhammet-tekin.dev/admin) · [Android APK](https://github.com/Tekin4124/roomflow/releases/latest/download/RoomFlow.apk) |
-| [Sihirli Not Defteri](https://github.com/Tekin4124/sihirli-not-defteri) | İki sayfalı defter görünümünde not yazma, çıkartma, tema ve PDF yazdırma özellikleri sunar. | [Web önizlemesi](https://notebook-preview.92-5-36-162.sslip.io) · Yeni alan adı için DNS bekleniyor. |
-| [Yükio](https://github.com/Tekin4124/yukio-android-demo) | Yük ilanlarını güzergâh ve araç özelliklerine göre filtreleyen Android arayüzü. Public sürüm yerel örnek verilerle çalışır. | [Kurulum ve APK](https://github.com/Tekin4124/yukio-android-demo#readme) |
-| [AI Ultra HD Restoration](https://github.com/Tekin4124/AI-UltraHD-Restoration) | SUPIR, Real-ESRGAN ve CodeFormer modellerini fotoğraf restorasyonu için bir araya getirir. | [GPU üzerinde kurulum](https://github.com/Tekin4124/AI-UltraHD-Restoration#readme) |
+</div>
 
-TekinFlow ve RoomFlow'un herkese açık yayınlarında örnek veriler kullanılır. RoomFlow'daki değişiklikler ziyaretçi oturumuna özeldir; gerçek şirket takvimine bağlanmaz.
+## 🚀 Geliştirdiğim projeler
 
-## Kullandığım araçlar
+<table>
+<tr>
+<td width="50%" valign="top">
 
-- **Android:** Kotlin, Jetpack Compose, Coroutines, Flow, Room, Retrofit
-- **Web ve backend:** React, Node.js, Express, Ktor, SQLite, PostgreSQL
-- **Çalıştırma ve test:** Linux, Docker, Caddy, GitHub Actions
-- **Görüntü işleme:** Python, PyTorch, Gradio
+### 📦 TekinFlow
+**Satın alma & sevkiyat**
 
-Projelerin README dosyalarında kurulum adımları, kullanım sınırları ve test komutları bulunur.
+Talep oluştur, şoför ata ve teslimatı takip et. Satın alma, sevkiyat, şoför ve yönetici rolleri aynı iş akışında buluşur.
+
+[![Web uygulaması](https://img.shields.io/badge/Canlı_yayın-Webde_aç-0D9488?style=flat-square&logo=googlechrome&logoColor=white)](https://tekinflow.muhammet-tekin.dev)
+![Kotlin](https://img.shields.io/badge/Kotlin-Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![React](https://img.shields.io/badge/React-Web-149ECA?style=flat-square&logo=react&logoColor=white)
+
+[💻 Kaynak kodu](https://github.com/Tekin4124/tekinflow) · [📱 Android APK](https://github.com/Tekin4124/tekinflow/releases/latest/download/TekinFlow.apk)
+
+</td>
+<td width="50%" valign="top">
+
+### 📅 RoomFlow
+**Toplantı odası & tablet ekranı**
+
+Odanın müsaitliğini, günün toplantılarını ve sıradaki rezervasyonu gösterir. Kendi takvimine bağlamak için Microsoft Graph desteği bulunur.
+
+[![Takvim](https://img.shields.io/badge/Canlı_yayın-Takvimi_aç-0284C7?style=flat-square&logo=googlechrome&logoColor=white)](https://roomflow.muhammet-tekin.dev)
+![Android](https://img.shields.io/badge/Android-Kiosk-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-43853D?style=flat-square&logo=nodedotjs&logoColor=white)
+
+[💻 Kaynak kodu](https://github.com/Tekin4124/roomflow) · [⚙️ Yönetim](https://roomflow.muhammet-tekin.dev/admin) · [📱 APK](https://github.com/Tekin4124/roomflow/releases/latest/download/RoomFlow.apk)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📖 Sihirli Not Defteri
+**Notlar, fikirler & renkli sayfalar**
+
+İki sayfalı defterde yaz, tema seç, çıkartma ve post-it ekle. Misafir olarak başlayabilir veya notlarını hesabına kaydedebilirsin. PDF olarak yazdırma da var.
+
+[![Defter](https://img.shields.io/badge/Canlı_yayın-Defteri_aç-D97706?style=flat-square&logo=googlechrome&logoColor=white)](https://defter.muhammet-tekin.dev)
+![JavaScript](https://img.shields.io/badge/JavaScript-Web-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-Notlar-003B57?style=flat-square&logo=sqlite&logoColor=white)
+
+[💻 Kaynak kodu](https://github.com/Tekin4124/sihirli-not-defteri)
+
+</td>
+<td width="50%" valign="top">
+
+### 🚛 Yükio
+**Android lojistik uygulaması**
+
+Yük ilanlarını araç ve güzergâh tercihlerine göre listele ve filtrele. Public sürüm, özel parser veya üretim sunucusu gerektirmeden örnek ilanlarla çalışır.
+
+![Kotlin](https://img.shields.io/badge/Kotlin-Android-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Room](https://img.shields.io/badge/Room-Yerel_veri-2563EB?style=flat-square&logo=android&logoColor=white)
+
+[💻 Kaynak kodu](https://github.com/Tekin4124/yukio-android-demo) · [📱 Kurulum & APK](https://github.com/Tekin4124/yukio-android-demo#readme)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+
+### ✨ AI Ultra HD Restoration
+**Fotoğraf restorasyonu**
+
+SUPIR, Real-ESRGAN ve CodeFormer modellerini tek Gradio arayüzünde birleştirir. Qwen, yazılan isteği restorasyon promptuna dönüştürür. Çalıştırmak için NVIDIA GPU gerekir; üretilen ayrıntılar model tahmini olabilir.
+
+![Python](https://img.shields.io/badge/Python-Görüntü_işleme-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-GPU-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Gradio](https://img.shields.io/badge/Gradio-Arayüz-F97316?style=flat-square)
+
+[💻 Kaynak kodu & kurulum](https://github.com/Tekin4124/AI-UltraHD-Restoration)
+
+</td>
+</tr>
+</table>
+
+> 🧪 TekinFlow ve RoomFlow'un canlı yayınlarında örnek veriler kullanılır. RoomFlow değişiklikleri ziyaretçi oturumuna özeldir; gerçek şirket takvimine bağlanmaz.
+
+## 🛠️ Kullandığım araçlar
+
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![React](https://img.shields.io/badge/React-149ECA?style=flat-square&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=nodedotjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+
+📍 Kocaeli, Türkiye · Kurulum adımları ve test komutları her projenin README'sinde.
