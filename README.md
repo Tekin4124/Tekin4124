@@ -20,6 +20,38 @@
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3>📦 <a href="https://github.com/Tekin4124/tekinflow">TekinFlow — Satın Alma & Sevkiyat</a></h3>
+      <p>Satın alma, sevkiyat ve şoför teslimat zincirini yöneten uçtan uca kurumsal operasyon platformu.</p>
+      <p>
+        <a href="https://tekinflow.muhammet-tekin.dev" target="_blank"><img src="https://img.shields.io/badge/Canlı%20Demo-tekinflow.muhammet--tekin.dev-0b8b83?style=flat-square&logo=googlechrome&logoColor=white" /></a>
+        <img src="https://img.shields.io/badge/Android-Compose-4285F4?style=flat-square&logo=android&logoColor=white" />
+        <img src="https://img.shields.io/badge/React%2019-Vite-61DAFB?style=flat-square&logo=react&logoColor=black" />
+        <img src="https://img.shields.io/badge/Ktor-PostgreSQL-7F52FF?style=flat-square&logo=kotlin&logoColor=white" />
+      </p>
+      <ul>
+        <li>4 Rol Tabanlı Akış (Satın Alma, Sevkiyat, Şoför, Yönetici)</li>
+        <li>Android Jetpack Compose, Room önbelleği & Clean Architecture</li>
+        <li>İzole yerel demo adaptörü & tam GitHub Actions CI/CD</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📅 <a href="https://github.com/Tekin4124/roomflow">RoomFlow — Toplantı Odası & Kiosk</a></h3>
+      <p>Kiosk tabletler ve web ekranları için kurumsal toplantı odası durum paneli ve yönetim sistemi.</p>
+      <p>
+        <a href="https://roomflow.muhammet-tekin.dev" target="_blank"><img src="https://img.shields.io/badge/Canlı%20Demo-roomflow.muhammet--tekin.dev-247f79?style=flat-square&logo=googlechrome&logoColor=white" /></a>
+        <img src="https://img.shields.io/badge/Android-Kiosk%20Mode-3DDC84?style=flat-square&logo=android&logoColor=white" />
+        <img src="https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
+        <img src="https://img.shields.io/badge/Microsoft-Graph%20API-0078D4?style=flat-square&logo=microsoft&logoColor=white" />
+      </p>
+      <ul>
+        <li>Uyanık ekran, anlık doluluk göstergesi & günlük zaman çizelgesi</li>
+        <li>Ziyaretçi başına izole sandbox ve genel oda yönetim paneli</li>
+        <li>Docker konteynerizasyonu & güvenli Caddy Unix soket mimarisi</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <h3>🚛 <a href="https://github.com/Tekin4124/yukio-android-demo">Yükio — Android Demo</a></h3>
       <p>Lojistik ilanlarını filtreleyen ve araç-güzergâh uygunluğuna göre sıralayan modern Android & Compose mimarisi.</p>
       <p>
