@@ -5,7 +5,7 @@
 **Android Geliştirme · Web & Backend · Yapay Zeka**  
 📍 Kocaeli / Darıca, Türkiye
 
-[🌐 Kişisel site](https://tekin4124.github.io/) · [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/)
+[🌐 Kişisel site](https://muhammet-tekin.dev/) · [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammet-tekin-41kocaeli/)
 [![E-posta](https://img.shields.io/badge/E--posta-ProtonMail-6D4AFF?style=flat-square&logo=protonmail&logoColor=white)](mailto:tekin.muhammet@proton.me)
 
 </div>
