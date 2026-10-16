@@ -15,6 +15,10 @@
 
 ### 🚀 Öne Çıkan Projeler
 
+- 🚛 **[Yükio](https://github.com/Tekin4124/yukio-android-demo)** — Lojistik yük ilanlarını güzergâh ve araç uygunluğuna göre filtreleyen reaktif Android mimarisi.  
+  `Kotlin` `Jetpack Compose` `Room DB` `Flow`  
+  🔗 [Android APK İndir](https://github.com/Tekin4124/yukio-android-demo/releases/latest/download/Yukio.apk) · [Kaynak Kodu](https://github.com/Tekin4124/yukio-android-demo)
+
 - 📦 **[TekinFlow](https://github.com/Tekin4124/tekinflow)** — Satın alma, sevkiyat ve şoför teslimat zincirini yöneten uçtan uca kurumsal operasyon platformu.  
   `Android (Compose)` `React 19` `Ktor` `PostgreSQL`  
   🔗 [Canlı Web Demo](https://tekinflow.muhammet-tekin.dev) · [Android APK İndir](https://github.com/Tekin4124/tekinflow/releases/latest/download/TekinFlow.apk) · [Kaynak Kodu](https://github.com/Tekin4124/tekinflow)
@@ -23,17 +27,13 @@
   `Android Kiosk` `Node.js` `Express` `Docker`  
   🔗 [Canlı Takvim](https://roomflow.muhammet-tekin.dev) · [Yönetim Paneli](https://roomflow.muhammet-tekin.dev/admin) · [Android APK İndir](https://github.com/Tekin4124/roomflow/releases/latest/download/RoomFlow.apk) · [Kaynak Kodu](https://github.com/Tekin4124/roomflow)
 
-- 📖 **[Sihirli Not Defteri](https://github.com/Tekin4124/sihirli-not-defteri)** — İki sayfalı defter görünümünde interaktif not alma, tema, çıkartmalar ve PDF yazdırma.  
-  `JavaScript` `Node.js` `Express`  
-  🔗 [Canlı Uygulama](https://defter.muhammet-tekin.dev) · [Kaynak Kodu](https://github.com/Tekin4124/sihirli-not-defteri)
-
-- 🚛 **[Yükio](https://github.com/Tekin4124/yukio-android-demo)** — Lojistik yük ilanlarını güzergâh ve araç uygunluğuna göre filtreleyen reaktif Android mimarisi.  
-  `Kotlin` `Jetpack Compose` `Room DB` `Flow`  
-  🔗 [Android APK İndir](https://github.com/Tekin4124/yukio-android-demo/releases/latest/download/Yukio.apk) · [Kaynak Kodu](https://github.com/Tekin4124/yukio-android-demo)
-
 - ✨ **[AI Ultra HD Restoration](https://github.com/Tekin4124/AI-UltraHD-Restoration)** — SUPIR, Real-ESRGAN ve CodeFormer modelleriyle 4K/8K fotoğraf restorasyonu ve Gradio arayüzü.  
   `Python` `PyTorch` `Gradio` `Docker`  
   🔗 [GPU Kurulum & Kaynak Kodu](https://github.com/Tekin4124/AI-UltraHD-Restoration#readme)
+
+- 📖 **[NoteFlow](https://github.com/Tekin4124/noteflow)** — İki sayfalı defter görünümünde interaktif not alma, tema, çıkartmalar ve PDF yazdırma.  
+  `JavaScript` `Node.js` `Express` `SQLite`  
+  🔗 [Canlı Uygulama](https://defter.muhammet-tekin.dev) · [Kaynak Kodu](https://github.com/Tekin4124/noteflow)
 
 > 💡 *Not: TekinFlow ve RoomFlow'un herkese açık canlı yayınlarında izole örnek veriler kullanılır; kurumsal sistemlere veya özel verilere bağlanmaz.*
 
