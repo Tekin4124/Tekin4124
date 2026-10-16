@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Original typographic profile artwork; all motion is rendered locally with Pillow."""
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageColor, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageColor, ImageChops
 import math
 import argparse
 
@@ -240,67 +240,80 @@ PAPER='#141A22'
 PAPER_INK='#D8E1EB'
 PAPER_RULE='#2B3542'
 
-def notebook_page(title,lines,writing=1,back=False):
-    page=Image.new('RGB',(235,202),PAPER);d=ImageDraw.Draw(page)
-    for y in [58,87,116,145,174]:line(d,[(14,y),(221,y)],PAPER_RULE,1)
-    text(d,15,13,title,17,PAPER_INK,True)
-    if not back:
-        cursor=None
-        for i,value in enumerate(lines):
-            progress=max(0,min(1,writing*len(lines)-i))
-            shown=value[:round(len(value)*progress)]
-            text(d,15,38+i*29,shown,17,PAPER_INK)
-            if 0<progress<1:cursor=(15+font(17).getlength(shown)+3,38+i*29)
-        if cursor:
-            x,y=cursor;line(d,[(x,y),(x,y+18)],ACCENT,2)
-        if writing>.5:
-            # A restrained annotation highlight stays beneath the text baseline.
-            end=15+143*min(1,(writing-.5)*2)
-            line(d,[(15,114),(end,114)],BLUE,2)
-    return page
+def path_progress(d,points,progress,color,width=2):
+    """Reveal an ink stroke by distance so corners do not change its speed."""
+    lengths=[math.dist(a,b) for a,b in zip(points,points[1:])]
+    remaining=sum(lengths)*max(0,min(1,progress))
+    for a,b,length in zip(points,points[1:],lengths):
+        if remaining<=0:break
+        t=min(1,remaining/length)
+        line(d,[a,(lerp(a[0],b[0],t),lerp(a[1],b[1],t))],color,width)
+        remaining-=length
 
 def notebook_scene(p):
     p%=1
     panel=Image.new('RGB',(510,243),BG);d=ImageDraw.Draw(panel)
     d.rounded_rectangle((8,13,502,235),radius=9,fill='#080B10',outline=RULE)
-    left=notebook_page('NOTLAR',['Proje planı','Arayüz taslakları','API notları'],1)
-    first=notebook_page('TASLAKLAR',['Ekran akışı','Veri modeli','Kontrol listesi'],1)
-    next_page=notebook_page('YENİ SAYFA',['Yeni ekran','Klavye kısayolları','Son kontroller'],max(0,min(1,(p-.23)/.31)))
-    back=notebook_page('FİKİRLER',['Daha sade','Daha hızlı','Daha akıcı'],1)
-    if p<.14:turning=0
-    elif p<.42:turning=ease((p-.14)/.28)
-    elif p<.58:turning=1
-    elif p<.86:turning=1-ease((p-.58)/.28)
-    else:turning=0
-    # Both sides use the same hinge, including the two resting endpoints.
     hinge=255
-    panel.paste(left,(20,23))
-    panel.paste(next_page,(hinge,23))
-    d=ImageDraw.Draw(panel)
+    # A fixed spread: no simulated 3D page or compressed, mirrored text.
+    for x in [20,hinge]:
+        d.rectangle((x,23,x+234,224),fill=PAPER)
+        for y in [81,113,145,177,209]:line(d,[(x+15,y),(x+219,y)],PAPER_RULE,1)
+    text(d,35,36,'NOTLAR',16,MUTED,True)
+    text(d,271,36,'BUGÜN',16,MUTED,True)
+    # Content uses its own alpha layer. A short upward transition clears the
+    # completed note for the next loop, while the paper and binding stay still.
+    content=Image.new('RGBA',(510,243),(0,0,0,0));cd=ImageDraw.Draw(content)
+    clamp=lambda value:max(0,min(1,value))
+    lines=[('Arayüzü sadeleştir.',.06,.20),('Geçişleri düzelt.',.23,.37),('Son kez kontrol et.',.40,.54)]
+    cursor=None
+    for i,(value,start,end) in enumerate(lines):
+        progress=clamp((p-start)/(end-start))
+        shown=value[:int(len(value)*progress)]
+        y=62+i*32
+        text(cd,35,y,shown,20,PAPER_INK)
+        if start<=p<end:cursor=(35+font(20).getlength(shown)+2,y)
+    if cursor:
+        x,y=cursor;line(cd,[(x,y+1),(x,y+20)],ACCENT,2)
+    # A small handwritten emphasis follows the note, then holds for reading.
+    marker=ease(clamp((p-.56)/.08))
+    path_progress(cd,[(36,150),(77,151),(121,149),(169,150),(205,149)],marker,BLUE,2)
+    # NoteFlow supports post-its. Place one, then draw each completed check in ink.
+    arrive=ease(clamp((p-.12)/.16))
+    if arrive>0:
+        note=Image.new('RGBA',(202,151),(0,0,0,0));nd=ImageDraw.Draw(note)
+        paper='#27384A';fold='#3D566F'
+        nd.polygon([(0,0),(201,0),(201,132),(183,150),(0,150)],fill=paper)
+        nd.polygon([(183,132),(201,132),(183,150)],fill=fold)
+        line(nd,[(14,12),(187,12)],'#3B526A',1)
+        for i,(label,start) in enumerate([('Arayüz',.27),('Geçişler',.45),('Son kontrol',.65)]):
+            y=28+i*35;done=ease(clamp((p-start)/.07))
+            nd.rounded_rectangle((14,y+3,31,y+20),radius=3,outline=blend('#7D98B2',BLUE,done),width=1)
+            text(nd,43,y,label,19,blend(TEXT,BLUE,done))
+            path_progress(nd,[(18,y+11),(22,y+16),(29,y+7)],done,TEXT,2)
+        # The paper settles onto the right page with a restrained rotation.
+        note=note.rotate(lerp(-7,-2,arrive),Image.Resampling.BICUBIC,expand=True)
+        note.putalpha(note.getchannel('A').point(lambda a:round(a*arrive)))
+        px=round(276+26*(1-arrive));py=round(66-30*(1-arrive))
+        shadow=Image.new('RGBA',content.size,(0,0,0,0))
+        shadow.paste((0,0,0,80),(px+3,py+5),note.getchannel('A'))
+        content=Image.alpha_composite(content,shadow.filter(ImageFilter.GaussianBlur(3)))
+        content.alpha_composite(note,(px,py))
+    # A completed spread gives way to a clean note without a page-flip illusion.
+    clear=ease(clamp((p-.88)/.10))
+    content.putalpha(content.getchannel('A').point(lambda a:round(a*(1-clear))))
+    if clear>0:
+        shifted=Image.new('RGBA',content.size,(0,0,0,0))
+        shifted.alpha_composite(content,(0,-round(10*clear)))
+        content=shifted
+    # Keep ink and the post-it within the two paper rectangles.
+    mask=Image.new('L',content.size,0);md=ImageDraw.Draw(mask)
+    md.rectangle((20,57,249,224),fill=255);md.rectangle((261,57,489,224),fill=255)
+    content.putalpha(ImageChops.multiply(content.getchannel('A'),mask))
+    panel=Image.alpha_composite(panel.convert('RGBA'),content).convert('RGB');d=ImageDraw.Draw(panel)
+    if p<.06 or p>=.98:line(d,[(35,63),(35,82)],ACCENT,2)
     for offset in [0,3]:
         line(d,[(21,227+offset),(489,227+offset)],PAPER_RULE,1)
-    angle=turning*math.pi
-    width=max(1,round(235*abs(math.cos(angle))))
-    front=first if turning<.5 else back
-    shaded=ImageEnhance.Brightness(front).enhance(.56+.44*abs(math.cos(angle)))
-    left_edge=hinge if turning<.5 else hinge-width
-    shadow_alpha=round(95*math.sin(angle))
-    if shadow_alpha:
-        shade=Image.new('RGBA',panel.size,(0,0,0,0));sd=ImageDraw.Draw(shade)
-        sd.rectangle((left_edge+8,29,left_edge+width+10,228),fill=(0,0,0,shadow_alpha))
-        panel=Image.alpha_composite(panel.convert('RGBA'),shade).convert('RGB')
-    for col in range(width):
-        fraction=col/max(1,width-1)
-        source_x=min(234,round(fraction*234))
-        outer=fraction if turning<.5 else 1-fraction
-        lift=round(math.sin(angle)*22*outer**1.5)
-        strip=shaded.crop((source_x,0,source_x+1,202)).resize((1,202-2*lift),Image.Resampling.BILINEAR)
-        panel.paste(strip,(left_edge+col,23+lift))
-    d=ImageDraw.Draw(panel)
-    edge=left_edge+width-1 if turning<.5 else left_edge
-    lift=round(math.sin(angle)*22)
-    line(d,[(edge,23+lift),(edge,225-lift)],PAPER_RULE,1)
-    # Draw the binding last so a moving sheet cannot erase or displace the rings.
     d.rectangle((hinge-3,23,hinge+3,225),fill='#080B10')
     for y in [49,83,117,151,185,215]:
         d.rounded_rectangle((hinge-9,y,hinge+9,y+4),radius=2,fill='#657182')
@@ -339,16 +352,18 @@ def main():
     header_frames[0].save(OUT/'profile-arcade-header-v2.gif',save_all=True,append_images=header_frames[1:],duration=50,loop=0,optimize=True,disposal=1)
     for project in PROJECTS:
         if project[-1] not in options.only:continue
-        stem='motion-'+project[-1]+('-v3' if project[-1] in {'yukio','noteflow'} else '')
-        still_phase=.26 if project[-1]=='yukio' else .08 if project[-1]=='noteflow' else .35
+        key=project[-1]
+        stem='motion-'+key+('-v4' if key=='noteflow' else '-v3' if key=='yukio' else '')
+        still_phase=.26 if key=='yukio' else .78 if key=='noteflow' else .35
+        count=160 if key=='noteflow' else COUNT
         frame(project,still_phase).save(OUT/(stem+'-still.png'),optimize=True)
         palette=frame(project,still_phase).quantize(colors=64)
-        frames=[frame(project,i/COUNT).quantize(palette=palette,dither=Image.Dither.NONE) for i in range(COUNT)]
+        frames=[frame(project,i/count).quantize(palette=palette,dither=Image.Dither.NONE) for i in range(count)]
         frames[0].save(OUT/(stem+'.gif'),save_all=True,append_images=frames[1:],duration=FRAME_MS,loop=0,optimize=True,disposal=1)
         print(stem,(OUT/(stem+'.gif')).stat().st_size)
         mobile_frame(project,still_phase).save(OUT/(stem+'-mobile-still.png'),optimize=True)
         mobile_palette=mobile_frame(project,still_phase).quantize(colors=64)
-        mobile_frames=[mobile_frame(project,i/COUNT).quantize(palette=mobile_palette,dither=Image.Dither.NONE) for i in range(COUNT)]
+        mobile_frames=[mobile_frame(project,i/count).quantize(palette=mobile_palette,dither=Image.Dither.NONE) for i in range(count)]
         mobile_frames[0].save(OUT/(stem+'-mobile.gif'),save_all=True,append_images=mobile_frames[1:],duration=FRAME_MS,loop=0,optimize=True,disposal=1)
 
 if __name__=='__main__':main()

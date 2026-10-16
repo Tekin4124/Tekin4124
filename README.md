@@ -41,9 +41,9 @@
 
 <a href="https://github.com/Tekin4124/noteflow">
   <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-noteflow-v3-mobile-still.png">
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-noteflow-v3-still.png">
-    <source media="(max-width: 700px)" srcset="assets/motion-noteflow-v3-mobile.gif">
-    <img src="assets/motion-noteflow-v3.gif" width="100%" alt="NoteFlow — dijital defter. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-noteflow-v4-mobile-still.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-noteflow-v4-still.png">
+    <source media="(max-width: 700px)" srcset="assets/motion-noteflow-v4-mobile.gif">
+    <img src="assets/motion-noteflow-v4.gif" width="100%" alt="NoteFlow — dijital defter. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
   </picture>
 </a>

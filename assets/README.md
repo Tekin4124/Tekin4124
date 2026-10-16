@@ -8,15 +8,15 @@
 - Yükio: üç farklı mesajın rota, araç ve tonaj alanları ayrışır; tamamlanan
   ilanlar akışa yerleşerek öncekileri aşağı taşır. Altta mesajın rotası izlenir.
   Bütün hareketler kendi paneline kırpılır.
-- NoteFlow: siyah defter, yazı, vurgu ve gölgeli sayfa çevirme. Sayfa aynı
-  menteşe etrafında ileri ve geri çevrilir; döngü sonunda kare sıfırlanmaz.
-  Cilt halkaları hareket boyunca sabit kalır.
+- NoteFlow: sabit siyah defterde not yazma, post-it yerleştirme ve
+  tamamlanan işleri kalem iziyle işaretleme. Metinler sıkışmaz veya ters dönmez.
+  160 kaynak kare, 50 ms/kare, 8 saniye; son bölümde içerik yumuşakça temizlenir.
 - Diğer üç proje animasyonu korunur. Masaüstü 1280 × 278, mobil 800 × 550.
-- Projeler: 120 kaynak kare, 50 ms/kare, 6 saniye. Aynı karelerin süreleri
+- Diğer projeler: 120 kaynak kare, 50 ms/kare, 6 saniye. Aynı karelerin süreleri
   korunarak birleştirilir. Hareket azaltma tercihinde sabit sürümler gösterilir.
 - Görseller temsili arayüz çizimleridir; gerçek ürün kaydı veya restorasyon
   kalite karşılaştırması değildir. İçerikler sentetiktir.
 - Üretim: Python 3 + Pillow, `python3 tools/render_profile.py`. Yalnız seçili
   projeler için `--only yukio noteflow`; font yolları betiğin başındadır.
 
-Önceki sürüm: `profile-before-refinement-2026-10-16` Git etiketi.
+Önceki sürüm: `profile-before-notebook-flow-2026-10-16` Git etiketi.
