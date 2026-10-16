@@ -19,4 +19,4 @@
 - Üretim: Python 3 + Pillow, `python3 tools/render_profile.py`. Yalnız seçili
   projeler için `--only yukio noteflow`; font yolları betiğin başındadır.
 
-Önceki sürüm: `profile-before-copy-2026-10-16` Git etiketi.
+Önceki sürüm: `profile-before-label-fixes-2026-10-16` Git etiketi.

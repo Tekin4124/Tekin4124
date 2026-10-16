@@ -103,8 +103,8 @@ def header(p=0):
     text(d,(W-font(22,True).getlength(label))/2,326,label,22,MUTED,True)
     return im
 
-PROJECTS=[('01','Yükio','Yük ve rota eşleştirme','KOTLIN · COMPOSE · ROOM','yukio'),('02','TekinFlow','Tedarik süreci yönetimi','COMPOSE · REACT · KTOR','tekinflow'),('03','RoomFlow','Toplantı odası yönetimi','ANDROID · NODE · DOCKER','roomflow'),('04','Ultra HD','Görüntü restorasyonu','PYTHON · PYTORCH · GRADIO','ultrahd'),('05','NoteFlow','Dijital not yönetimi','JAVASCRIPT · NODE · SQLITE','noteflow')]
-ART_VERSIONS={'yukio':4,'tekinflow':2,'roomflow':2,'ultrahd':2,'noteflow':5}
+PROJECTS=[('01','Yükio','Lojistik ilan asistanı','KOTLIN · COMPOSE · ROOM','yukio'),('02','TekinFlow','Tedarik süreci yönetimi','COMPOSE · REACT · KTOR','tekinflow'),('03','RoomFlow','Toplantı odası yönetimi','ANDROID · NODE · DOCKER','roomflow'),('04','AI-Ultra HD','Görüntü restorasyonu','PYTHON · PYTORCH · GRADIO','ultrahd'),('05','NoteFlow','Dijital not yönetimi','JAVASCRIPT · NODE · SQLITE','noteflow')]
+ART_VERSIONS={'yukio':5,'tekinflow':2,'roomflow':2,'ultrahd':3,'noteflow':6}
 
 def base(project):
     num,title,desc,stack,_=project
@@ -260,13 +260,19 @@ def notebook_scene(p):
     for x in [20,hinge]:
         d.rectangle((x,23,x+234,224),fill=PAPER)
         for y in [81,113,145,177,209]:line(d,[(x+15,y),(x+219,y)],PAPER_RULE,1)
+    lines=[('Fikirleri not al.',.06,.20),('Planı netleştir.',.23,.37),('Taslağı tamamla.',.40,.54)]
+    clamp=lambda value:max(0,min(1,value))
+    clear=ease(clamp((p-.88)/.10))
+    marker=ease(clamp((p-.56)/.08))
+    span=font(20).getlength(lines[-1][0])
+    # Tint the existing rule behind the text. A second underline would become
+    # a thick band when the notebook is scaled down, especially during reset.
+    path_progress(d,[(35,145),(35+span,145)],marker,blend(PAPER_RULE,BLUE,1-clear),1)
     text(d,35,36,'NOTLAR',16,MUTED,True)
     text(d,271,36,'BUGÜN',16,MUTED,True)
     # Content uses its own alpha layer. A short upward transition clears the
     # completed note for the next loop, while the paper and binding stay still.
     content=Image.new('RGBA',(510,243),(0,0,0,0));cd=ImageDraw.Draw(content)
-    clamp=lambda value:max(0,min(1,value))
-    lines=[('Fikirleri not al.',.06,.20),('Planı netleştir.',.23,.37),('Taslağı tamamla.',.40,.54)]
     cursor=None
     for i,(value,start,end) in enumerate(lines):
         progress=clamp((p-start)/(end-start))
@@ -276,10 +282,6 @@ def notebook_scene(p):
         if start<=p<end:cursor=(35+font(20).getlength(shown)+2,y)
     if cursor:
         x,y=cursor;line(cd,[(x,y+1),(x,y+20)],ACCENT,2)
-    # A small handwritten emphasis follows the note, then holds for reading.
-    marker=ease(clamp((p-.56)/.08))
-    span=font(20).getlength(lines[-1][0])
-    path_progress(cd,[(35,150),(35+span*.25,151),(35+span*.5,149),(35+span*.8,150),(35+span,149)],marker,BLUE,2)
     # NoteFlow supports post-its. Place one, then draw each completed check in ink.
     arrive=ease(clamp((p-.12)/.16))
     if arrive>0:
@@ -302,7 +304,6 @@ def notebook_scene(p):
         content=Image.alpha_composite(content,shadow.filter(ImageFilter.GaussianBlur(3)))
         content.alpha_composite(note,(px,py))
     # A completed spread gives way to a clean note without a page-flip illusion.
-    clear=ease(clamp((p-.88)/.10))
     content.putalpha(content.getchannel('A').point(lambda a:round(a*(1-clear))))
     if clear>0:
         shifted=Image.new('RGBA',content.size,(0,0,0,0))
