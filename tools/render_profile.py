@@ -103,7 +103,8 @@ def header(p=0):
     text(d,(W-font(22,True).getlength(label))/2,326,label,22,MUTED,True)
     return im
 
-PROJECTS=[('01','Yükio','Lojistik ilan eşleştirme','KOTLIN · COMPOSE · ROOM','yukio'),('02','TekinFlow','Satın alma ve teslimat','COMPOSE · REACT · KTOR','tekinflow'),('03','RoomFlow','Toplantı odası ekranları','ANDROID · NODE · DOCKER','roomflow'),('04','Ultra HD','Fotoğraf restorasyonu','PYTHON · PYTORCH · GRADIO','ultrahd'),('05','NoteFlow','İki sayfalı dijital defter','JAVASCRIPT · NODE · SQLITE','noteflow')]
+PROJECTS=[('01','Yükio','Yük ve rota eşleştirme','KOTLIN · COMPOSE · ROOM','yukio'),('02','TekinFlow','Tedarik süreci yönetimi','COMPOSE · REACT · KTOR','tekinflow'),('03','RoomFlow','Toplantı odası yönetimi','ANDROID · NODE · DOCKER','roomflow'),('04','Ultra HD','Görüntü restorasyonu','PYTHON · PYTORCH · GRADIO','ultrahd'),('05','NoteFlow','Dijital not yönetimi','JAVASCRIPT · NODE · SQLITE','noteflow')]
+ART_VERSIONS={'yukio':4,'tekinflow':2,'roomflow':2,'ultrahd':2,'noteflow':5}
 
 def base(project):
     num,title,desc,stack,_=project
@@ -265,7 +266,7 @@ def notebook_scene(p):
     # completed note for the next loop, while the paper and binding stay still.
     content=Image.new('RGBA',(510,243),(0,0,0,0));cd=ImageDraw.Draw(content)
     clamp=lambda value:max(0,min(1,value))
-    lines=[('Arayüzü sadeleştir.',.06,.20),('Geçişleri düzelt.',.23,.37),('Son kez kontrol et.',.40,.54)]
+    lines=[('Fikirleri not al.',.06,.20),('Planı netleştir.',.23,.37),('Taslağı tamamla.',.40,.54)]
     cursor=None
     for i,(value,start,end) in enumerate(lines):
         progress=clamp((p-start)/(end-start))
@@ -277,7 +278,8 @@ def notebook_scene(p):
         x,y=cursor;line(cd,[(x,y+1),(x,y+20)],ACCENT,2)
     # A small handwritten emphasis follows the note, then holds for reading.
     marker=ease(clamp((p-.56)/.08))
-    path_progress(cd,[(36,150),(77,151),(121,149),(169,150),(205,149)],marker,BLUE,2)
+    span=font(20).getlength(lines[-1][0])
+    path_progress(cd,[(35,150),(35+span*.25,151),(35+span*.5,149),(35+span*.8,150),(35+span,149)],marker,BLUE,2)
     # NoteFlow supports post-its. Place one, then draw each completed check in ink.
     arrive=ease(clamp((p-.12)/.16))
     if arrive>0:
@@ -286,7 +288,7 @@ def notebook_scene(p):
         nd.polygon([(0,0),(201,0),(201,132),(183,150),(0,150)],fill=paper)
         nd.polygon([(183,132),(201,132),(183,150)],fill=fold)
         line(nd,[(14,12),(187,12)],'#3B526A',1)
-        for i,(label,start) in enumerate([('Arayüz',.27),('Geçişler',.45),('Son kontrol',.65)]):
+        for i,(label,start) in enumerate([('Fikirler',.27),('Plan',.45),('Taslak',.65)]):
             y=28+i*35;done=ease(clamp((p-start)/.07))
             nd.rounded_rectangle((14,y+3,31,y+20),radius=3,outline=blend('#7D98B2',BLUE,done),width=1)
             text(nd,43,y,label,19,blend(TEXT,BLUE,done))
@@ -353,7 +355,7 @@ def main():
     for project in PROJECTS:
         if project[-1] not in options.only:continue
         key=project[-1]
-        stem='motion-'+key+('-v4' if key=='noteflow' else '-v3' if key=='yukio' else '')
+        stem=f'motion-{key}-v{ART_VERSIONS[key]}'
         still_phase=.26 if key=='yukio' else .78 if key=='noteflow' else .35
         count=160 if key=='noteflow' else COUNT
         frame(project,still_phase).save(OUT/(stem+'-still.png'),optimize=True)
