@@ -11,6 +11,9 @@ BG='#0D1117';SURFACE='#111821';RULE='#283340';TEXT='#EDF1F5';MUTED='#A5AFBC';ACC
 SANS='/usr/share/fonts/urw-base35/NimbusSans-Bold.otf'
 MONO='/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf'
 W,H=1280,278
+PROJECT_W=1080
+PREVIEW_BOX=(690,15,1220,258)
+PREVIEW_X=500
 COUNT=120
 FRAME_MS=50
 
@@ -104,17 +107,17 @@ def header(p=0):
     return im
 
 PROJECTS=[('01','Yükio','Lojistik ilan asistanı','KOTLIN · COMPOSE · ROOM','yukio'),('02','TekinFlow','Tedarik süreci yönetimi','COMPOSE · REACT · KTOR','tekinflow'),('03','RoomFlow','Toplantı odası yönetimi','ANDROID · NODE · DOCKER','roomflow'),('04','AI-Ultra HD','Görüntü restorasyonu','PYTHON · PYTORCH · GRADIO','ultrahd'),('05','NoteFlow','Dijital not yönetimi','JAVASCRIPT · NODE · SQLITE','noteflow')]
-ART_VERSIONS={'yukio':5,'tekinflow':2,'roomflow':2,'ultrahd':3,'noteflow':6}
+ART_VERSIONS={'yukio':6,'tekinflow':3,'roomflow':3,'ultrahd':4,'noteflow':7}
 
 def base(project):
     num,title,desc,stack,_=project
-    im=Image.new('RGB',(W,H),BG);d=ImageDraw.Draw(im)
+    im=Image.new('RGB',(PROJECT_W,H),BG);d=ImageDraw.Draw(im)
     text(d,38,24,num,18,ACCENT,True)
     text(d,35,62,title,70)
     text(d,40,150,desc,27,MUTED)
     text(d,40,224,stack,18,MUTED,True)
-    line(d,[(650,34),(650,244)])
-    line(d,[(40,275),(1240,275)])
+    line(d,[(465,34),(465,244)])
+    line(d,[(40,275),(PROJECT_W-40,275)])
     return im
 
 def yukio(im,p):
@@ -328,20 +331,27 @@ def noteflow(im,p):
     im.paste(panel,(700,15))
 
 DRAWERS={'yukio':yukio,'tekinflow':tekinflow,'roomflow':roomflow,'ultrahd':ultrahd,'noteflow':noteflow}
+def project_preview(project,p):
+    # Scenes keep their own coordinate space so desktop and mobile can share
+    # the same animation without inheriting the desktop text-column width.
+    stage=Image.new('RGB',(W,H),BG)
+    DRAWERS[project[-1]](stage,p%1)
+    return stage.crop(PREVIEW_BOX)
+
 def frame(project,p):
-    p%=1.0
-    im=base(project);DRAWERS[project[-1]](im,p);return im
+    im=base(project)
+    im.paste(project_preview(project,p),(PREVIEW_X,15))
+    return im
 
 def mobile_frame(project,p):
-    desktop=frame(project,p)
     im=Image.new('RGB',(800,550),BG);d=ImageDraw.Draw(im)
     num,title,desc,stack,_=project
     text(d,40,20,num,18,ACCENT,True)
     text(d,36,57,title,67)
     text(d,40,137,desc,27,MUTED)
     text(d,40,184,stack,17,MUTED,True)
-    preview=desktop.crop((680,15,1235,258)).resize((720,315),Image.Resampling.LANCZOS)
-    im.paste(preview,(30,221))
+    preview=project_preview(project,p).resize((720,330),Image.Resampling.LANCZOS)
+    im.paste(preview,(30,213))
     line(ImageDraw.Draw(im),[(40,548),(760,548)])
     return im
 
