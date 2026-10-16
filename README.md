@@ -1,11 +1,14 @@
-<img src="assets/profile-motion-header.png" width="100%" alt="Muhammet Tekin — Android, web ve backend">
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/profile-arcade-header-still.png">
+  <img src="assets/profile-arcade-header.gif" width="100%" alt="Muhammet Tekin — Android, web ve backend. Topun raketten sekip ismin harflerini aydınlattığı arcade animasyonu.">
+</picture>
 
 <a href="https://github.com/Tekin4124/yukio-android-demo">
   <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-yukio-mobile-still.png">
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-yukio-still.png">
-    <source media="(max-width: 700px)" srcset="assets/motion-yukio-mobile.gif">
-    <img src="assets/motion-yukio.gif" width="100%" alt="Yükio — lojistik ilan eşleştirme. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-yukio-v2-mobile-still.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-yukio-v2-still.png">
+    <source media="(max-width: 700px)" srcset="assets/motion-yukio-v2-mobile.gif">
+    <img src="assets/motion-yukio-v2.gif" width="100%" alt="Yükio — lojistik ilan eşleştirme. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
   </picture>
 </a>
 
@@ -38,9 +41,9 @@
 
 <a href="https://github.com/Tekin4124/noteflow">
   <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-noteflow-mobile-still.png">
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-noteflow-still.png">
-    <source media="(max-width: 700px)" srcset="assets/motion-noteflow-mobile.gif">
-    <img src="assets/motion-noteflow.gif" width="100%" alt="NoteFlow — dijital defter. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 700px)" srcset="assets/motion-noteflow-v2-mobile-still.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion-noteflow-v2-still.png">
+    <source media="(max-width: 700px)" srcset="assets/motion-noteflow-v2-mobile.gif">
+    <img src="assets/motion-noteflow-v2.gif" width="100%" alt="NoteFlow — dijital defter. Proje akışının temsili animasyonu; kaynak ve demo için aç.">
   </picture>
 </a>
